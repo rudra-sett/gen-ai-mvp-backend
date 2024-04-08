@@ -74,6 +74,7 @@ async function getPromptWithHistoricalContext(prompt, history) {
       let llama = new Mistral7BModel();
       const CONTEXT_COMPLETION_INSTRUCTIONS = "Given this chat history and follow-up question, please re-write the question so that it is contextualized and suitable for a similarity search program to find relevant information. Try replacing words like 'it' or 'that' with relevant vocabulary words. Return ONLY the sentence and nothing more. If the question contains any personal information, please remove it. The rephrased prompt: ";
       const enhancedPrompt =  await llama.getResponse(CONTEXT_COMPLETION_INSTRUCTIONS, history, prompt);
+      console.log(enhancedPrompt);
       return enhancedPrompt;
     } else {
       return prompt;
