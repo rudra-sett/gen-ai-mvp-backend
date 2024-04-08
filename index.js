@@ -62,8 +62,7 @@ async function processBedrockStream(modelStream, model, responseStream){
   } catch (error) {
     console.error("Stream processing error:", error);
     responseStream.write(error.message);
-    responseStream.end()
-    // Note: At this point, it's not possible to send an error message through the stream if it's already started streaming data.
+    responseStream.end()    
   }
 }
 
