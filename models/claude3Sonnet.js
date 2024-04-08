@@ -33,7 +33,7 @@ class ClaudeModel{
     const payload = {
       "anthropic_version": "bedrock-2023-05-31",
       "system": system,
-      // "max_tokens": 1024,
+      "max_tokens": 2048,
       "messages" : hist,
       "temperature" : 0.27,
     };
